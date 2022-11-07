@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grad_ffront/model/login_id.dart';
 
 class MyPost extends StatefulWidget {
   const MyPost({Key? key}) : super(key: key);
@@ -26,7 +28,7 @@ class _MyPostState extends State<MyPost> {
             // postId = responseBody['data'][0]['postId'];
             return GestureDetector(
               onTap: () {
-                print("123");
+                print("${Get.find<LogInId>().loginId}");
               },
               child: Card(
                 child: Row(

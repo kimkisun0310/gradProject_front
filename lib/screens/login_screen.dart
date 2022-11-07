@@ -9,7 +9,6 @@ import 'package:http/http.dart' as http;
 import 'package:grad_ffront/controller/api.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:crypto/crypto.dart';
-import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
 

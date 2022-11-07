@@ -41,7 +41,6 @@ class _MyProfileState extends State<MyProfile> {
                     padding: EdgeInsets.all(12),
                     child: CircleAvatar(
                       radius: 60,
-                      // backgroundImage: AssetImage('assets/images/blue.jpg'),
                       backgroundImage: AssetImage("assets/images/pic1.png"),
                       backgroundColor: Colors.white,
                     ),

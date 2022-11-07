@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grad_ffront/config/palette.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:grad_ffront/model/login_id.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:grad_ffront/model/post.dart';
 import 'package:grad_ffront/controller/api.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 class PostWrite extends StatefulWidget {
   const PostWrite({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _PostWriteState extends State<PostWrite> {
 
   submitPost() async{
     Post postModel = Post(
-      1,
+      Get.find<LogInId>().loginId,
       titleController.text.trim(),
       contentsController.text.trim(),
       int.parse(priceController.text.trim())
