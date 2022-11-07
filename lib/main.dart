@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grad_ffront/screens/login_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:grad_ffront/model/provider_of_member.dart';
+import 'package:grad_ffront/model/login_id.dart';
 
 void main() {
   runApp(const MyApp());

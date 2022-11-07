@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:grad_ffront/model/provider_of_member.dart';
+import 'package:grad_ffront/model/login_id.dart';
 import 'package:http/http.dart' as http;
 import 'package:grad_ffront/controller/api.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:grad_ffront/screens/post/post_write_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 class PostList extends StatefulWidget {
   const PostList({Key? key}) : super(key: key);
@@ -62,7 +63,7 @@ class _PostListState extends State<PostList> {
           // postId = responseBody['data'][0]['postId'];
           return GestureDetector(
             onTap: () {
-              print("123");
+              print("${Get.find<LogInId>().loginId}");
             },
             child: Card(
               child: Row(

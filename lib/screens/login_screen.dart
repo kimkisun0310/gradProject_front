@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:grad_ffront/config/palette.dart';
-import 'package:grad_ffront/model/provider_of_member.dart';
+import 'package:grad_ffront/model/login_id.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../model/member.dart';
 import 'main_screen.dart';
@@ -10,6 +10,8 @@ import 'package:grad_ffront/controller/api.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:crypto/crypto.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+
 
 class LogInSignUpScreen extends StatefulWidget {
   const LogInSignUpScreen({Key? key}) : super(key: key);
@@ -32,6 +34,11 @@ class _LogInSignUpScreenState extends State<LogInSignUpScreen> {
   final _formkey = GlobalKey<FormState>();
 
   Map<String,String> headers = {'Content-Type':'application/json'};
+
+  setLogInId(int id){
+    LogInId logInIdcontroller = Get.put(LogInId());
+    logInIdcontroller.setId(id);
+  }
 
   changePassword(String password){
     var bytesToHash = utf8.encode(password);
@@ -97,6 +104,7 @@ class _LogInSignUpScreenState extends State<LogInSignUpScreen> {
         var responseBody = jsonDecode(response.body);
         var memberId = responseBody['data'];
         if(memberId!=-1) {
+          setLogInId(memberId);
           Navigator.push(
               context,
               MaterialPageRoute(
